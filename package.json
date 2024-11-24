@@ -1,6 +1,6 @@
 {
   "license": "MIT",
-  "name": "react-konva",
+  "name": "react-konva-tweak",
   "description": "React binding to canvas element via Konva framework",
   "version": "19.0.0-0",
   "keywords": [
