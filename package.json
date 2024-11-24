@@ -1,20 +1,18 @@
 {
-  "license": "MIT",
   "name": "react-konva-tweak",
-  "description": "React binding to canvas element via Konva framework",
-  "version": "19.0.0-0",
+  "description": "React binding to canvas element via Konva framework (tweaked for konva-node-tweak)",
+  "version": "18.2.10-tweak.0",
+  "license": "MIT",
   "keywords": [
     "react",
     "canvas",
     "jsx",
     "konva"
   ],
-  "bugs": "https://github.com/konvajs/react-konva/issues",
   "main": "lib/ReactKonva.js",
   "module": "es/ReactKonva.js",
   "repository": {
-    "type": "git",
-    "url": "git@github.com:konvajs/react-konva.git"
+    "type": "git"
   },
   "dependencies": {
     "@types/react-reconciler": "^0.28.8",
@@ -22,27 +20,10 @@
     "react-reconciler": "0.31.0-beta-73bcdfbae5-20240502",
     "scheduler": "0.25.0-beta-73bcdfbae5-20240502"
   },
-  "targets": {
-    "none": {}
-  },
-  "funding": [
-    {
-      "type": "patreon",
-      "url": "https://www.patreon.com/lavrton"
-    },
-    {
-      "type": "opencollective",
-      "url": "https://opencollective.com/konva"
-    },
-    {
-      "type": "github",
-      "url": "https://github.com/sponsors/lavrton"
-    }
-  ],
   "peerDependencies": {
     "konva": "npm:konva-node-tweak@^1.0.0",
-    "react": ">=19.0.0-beta",
-    "react-dom": ">=19.0.0-beta"
+    "react": ">=18.0.0",
+    "react-dom": ">=18.0.0"
   },
   "devDependencies": {
     "@types/chai": "^4.3.17",
