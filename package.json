@@ -40,7 +40,7 @@
     }
   ],
   "peerDependencies": {
-    "konva": "^8.0.1 || ^7.2.5 || ^9.0.0",
+    "konva": "npm:konva-node-tweak@^1.0.0",
     "react": ">=19.0.0-beta",
     "react-dom": ">=19.0.0-beta"
   },
@@ -49,7 +49,7 @@
     "@types/mocha": "^10.0.7",
     "@types/react": "18.3.3",
     "chai": "4.3.7",
-    "konva": "^9.3.14",
+    "konva": "npm:konva-node-tweak@^1.0.0",
     "mocha-headless-chrome": "^4.0.0",
     "parcel": "^2.12.0",
     "process": "^0.11.10",
