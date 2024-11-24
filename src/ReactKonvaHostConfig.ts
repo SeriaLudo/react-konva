@@ -1,18 +1,28 @@
 import Konva from 'konva/lib/Core.js';
-import { applyNodeProps, updatePicture, EVENTS_NAMESPACE } from './makeUpdates.js';
+import {
+  applyNodeProps,
+  updatePicture,
+  EVENTS_NAMESPACE,
+} from './makeUpdates.js';
 
 export {
   unstable_now as now,
   unstable_IdlePriority as idlePriority,
   unstable_runWithPriority as run,
 } from 'scheduler';
-import { DefaultEventPriority } from 'react-reconciler/constants.js';
+import {
+  // NoEventPriority,
+  DefaultEventPriority,
+} from 'react-reconciler/constants.js';
 
 const NO_CONTEXT = {};
 const UPDATE_SIGNAL = {};
 
 // for react-spring capability
 (Konva.Node.prototype as any)._applyProps = applyNodeProps;
+
+// let currentUpdatePriority: number = NoEventPriority;
+let currentUpdatePriority: number = DefaultEventPriority;
 
 export function appendInitialChild(parentInstance, child) {
   if (typeof child === 'string') {
@@ -182,13 +192,7 @@ export function commitMount(instance, type, newProps) {
   // Noop
 }
 
-export function commitUpdate(
-  instance,
-  updatePayload,
-  type,
-  oldProps,
-  newProps
-) {
+export function commitUpdate(instance, type, oldProps, newProps) {
   applyNodeProps(instance, newProps, oldProps);
 }
 
@@ -217,4 +221,50 @@ export function clearContainer(container) {
 
 export function detachDeletedInstance() {}
 
-export const getCurrentEventPriority = () => DefaultEventPriority;
+export function getCurrentEventPriority() {
+  return currentUpdatePriority;
+}
+
+export function prepareScopeUpdate() {}
+
+export function getInstanceFromScope() {
+  return null;
+}
+
+export function setCurrentUpdatePriority(newPriority) {
+  currentUpdatePriority = newPriority;
+}
+
+export function getCurrentUpdatePriority() {
+  return currentUpdatePriority;
+}
+
+export function resolveUpdatePriority() {
+  return currentUpdatePriority || DefaultEventPriority;
+}
+
+export function shouldAttemptEagerTransition() {
+  return false;
+}
+
+export function requestPostPaintCallback() {}
+
+export function maySuspendCommit() {
+  return false;
+}
+
+export function preloadInstance() {
+  return true;
+}
+
+export function startSuspendingCommit() {}
+
+export function suspendInstance() {}
+
+export function waitForCommitToBeReady() {
+  return null;
+}
+
+export const NotPendingTransition = null;
+
+export function resetFormInstance() {}
